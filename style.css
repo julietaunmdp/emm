@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  padding: 20px;
+  background: #fdfdfd;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+#malla {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.anio {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.anio h2 {
+  margin: 0;
+  padding: 12px;
+  background: #e0e0e0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+
+.cuatrimestre {
+  padding: 10px;
+  border-left: 5px solid transparent;
+  transition: background 0.3s;
+}
+
+.cuatrimestre h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.materias {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.materia {
+  padding: 8px 10px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.materia:hover {
+  background: #eaeaea;
+}
+
+.materia.bloqueada {
+  background: #f0f0f0;
+  color: #aaa;
+  border: 1px dashed #ccc;
+  cursor: not-allowed;
+}
+
+.materia.aprobada {
+  background: #d2f8d2;
+  border-color: #78ca78;
+}
+
+.materia::after {
+  content: "✔";
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 1rem;
+  color: green;
+}
+
+.materia.aprobada::after {
+  display: block;
+}
+
+/* Colores por año (pasteles) */
+.anio[data-anio="1"] .cuatrimestre { border-color: #b3e5fc; }
+.anio[data-anio="2"] .cuatrimestre { border-color: #c8e6c9; }
+.anio[data-anio="3"] .cuatrimestre { border-color: #ffe0b2; }
+.anio[data-anio="4"] .cuatrimestre { border-color: #f8bbd0; }
+.anio[data-anio="5"] .cuatrimestre { border-color: #d1c4e9; }
+.anio[data-anio="6"] .cuatrimestre { border-color: #cfd8dc; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .anio {
+    flex: 1 1 100%;
+  }
+}
